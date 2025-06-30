@@ -41,8 +41,6 @@ phishdetect-web/
 
 ## ⚙️ Cara Menjalankan di Lokal
 
-## 🚀 Cara Menjalankan (Lokal)
-
 1. Clone repo ini:
    git clone https://github.com/akmaaltaufiq/phishdetect-web.git
    cd phishdetect-web
