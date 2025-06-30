@@ -30,7 +30,7 @@ app = Flask(__name__)
 history = []
 
 # Static values for accuracy and classification report
-accuracy = "95.0"
+accuracy = "95.47"
 report = """
 Laporan Klasifikasi:
                    precision    recall  f1-score   support
