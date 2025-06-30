@@ -5,6 +5,7 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import nltk
 import pandas as pd
+import os
 
 nltk.download('stopwords')
 nltk.download('wordnet')
@@ -47,7 +48,7 @@ def index():
     prediction=prediction,
     email=email_text,
     history=history,
-    accuracy="95.47%",  # atau angka hasil evaluasi kamu
+    accuracy="95.47",  # atau angka hasil evaluasi kamu
 )
 
 
