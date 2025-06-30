@@ -5,7 +5,6 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import nltk
 import pandas as pd
-import os
 
 nltk.download('stopwords')
 nltk.download('wordnet')
@@ -30,10 +29,25 @@ def clean_text(text):
 app = Flask(__name__)
 history = []
 
+# Static values for accuracy and classification report
+accuracy = "95.0"
+report = """
+Laporan Klasifikasi:
+                   precision    recall  f1-score   support
+
+       Safe Email       0.93      0.98      0.95      7935
+   Phishing Email       0.98      0.93      0.96      8563
+
+         accuracy                           0.95     16498
+        macro avg       0.96      0.96      0.95     16498
+     weighted avg       0.95      0.95      0.95     16498
+""".strip()
+
 @app.route("/", methods=["GET", "POST"])
 def index():
     prediction = ""
     email_text = ""
+
     if request.method == "POST":
         email_text = request.form["email"]
         cleaned = clean_text(email_text)
@@ -43,15 +57,15 @@ def index():
         history.insert(0, {"time": pd.Timestamp.now().strftime("%H:%M:%S"), "label": prediction})
         if len(history) > 5:
             history.pop()
-    return render_template(
-    "index.html",
-    prediction=prediction,
-    email=email_text,
-    history=history,
-    accuracy="95.47",  # atau angka hasil evaluasi kamu
-)
 
+    return render_template(
+        "index.html",
+        prediction=prediction,
+        email=email_text,
+        history=history,
+        accuracy=accuracy,
+        report=report
+    )
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(debug=False, host="0.0.0.0", port=port)
+    app.run(debug=True)
