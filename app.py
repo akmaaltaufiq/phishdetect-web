@@ -42,7 +42,15 @@ def index():
         history.insert(0, {"time": pd.Timestamp.now().strftime("%H:%M:%S"), "label": prediction})
         if len(history) > 5:
             history.pop()
-    return render_template("index.html", prediction=prediction, email=email_text, history=history)
+    return render_template(
+    "index.html",
+    prediction=prediction,
+    email=email_text,
+    history=history,
+    accuracy="95.47%",  # atau angka hasil evaluasi kamu
+)
+
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(debug=False, host="0.0.0.0", port=port)
