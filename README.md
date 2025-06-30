@@ -25,47 +25,41 @@ PhishDetect Web adalah aplikasi web berbasis Flask yang dapat mendeteksi apakah 
 
 ## 📁 Struktur Direktori
 
-├── app.py
-├── model.pkl
-├── vectorizer.pkl
+phishdetect-web/
+│
+├── app.py # Backend Flask utama
+├── model.pkl # Model Machine Learning
+├── vectorizer.pkl # Vectorizer TF-IDF atau Count
+├── requirements.txt # Daftar dependensi
+│
 ├── templates/
-│ └── index.html
-├── static/
-│ ├── style.css
-│ └── script.js
-├── README.md
-└── .gitignore
-
-markdown
-Copy
-Edit
+│ └── index.html # Tampilan frontend (Jinja2)
+│
+└── static/
+├── style.css # CSS
+└── script.js # JS
 
 ## ⚙️ Cara Menjalankan di Lokal
 
-1. Clone repositori ini:
+## 🚀 Cara Menjalankan (Lokal)
+
+1. Clone repo ini:
    git clone https://github.com/akmaaltaufiq/phishdetect-web.git
    cd phishdetect-web
+   
+Buat dan aktifkan virtual environment:
+python -m venv venv
+source venv/bin/activate      # Linux/macOS
+venv\Scripts\activate         # Windows
 
-markdown
-Copy
-Edit
+Install requirements:
+pip install -r requirements.txt
 
-2. Install dependensi:
-   pip install -r requirements.txt
+Jalankan server:
+python app.py
 
-markdown
-Copy
-Edit
-
-3. Jalankan aplikasi:
-   python app.py
-
-markdown
-Copy
-Edit
-
-4. Akses di browser:
-   http://127.0.0.1:5000
+Buka di browser:
+http://127.0.0.1:5000
 
 ## 📬 Kontak
 
