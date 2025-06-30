@@ -45,18 +45,18 @@ phishdetect-web/
    git clone https://github.com/akmaaltaufiq/phishdetect-web.git
    cd phishdetect-web
    
-Buat dan aktifkan virtual environment:
+2. Buat dan aktifkan virtual environment:
 python -m venv venv
 source venv/bin/activate      # Linux/macOS
 venv\Scripts\activate         # Windows
 
-Install requirements:
+3. Install requirements:
 pip install -r requirements.txt
 
-Jalankan server:
+4. Jalankan server:
 python app.py
 
-Buka di browser:
+5. Buka di browser:
 http://127.0.0.1:5000
 
 ## 📬 Kontak
