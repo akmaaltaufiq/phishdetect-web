@@ -2,7 +2,7 @@
 
 PhishDetect Web adalah aplikasi web berbasis Flask yang dapat mendeteksi apakah isi email mengandung unsur phishing atau aman. Proyek ini menggunakan pendekatan Natural Language Processing (NLP) dan algoritma Naive Bayes untuk melakukan klasifikasi.
 
-🌐 **Live Demo**: [https://phishdetect-web.up.railway.app]
+🌐 **Live Demo**: [https://phishdetect-web-production.up.railway.app/]
 
 ## 🚀 Fitur Utama
 
